@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Captures each survey response instance</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Survey Responses</relationshipLabel>
+        <relationshipName>Survey_Responses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <required>true</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SurveyTemplate__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Template</label>
+        <referenceTo>SurveyTemplate__c</referenceTo>
+        <relationshipLabel>Responses</relationshipLabel>
+        <relationshipName>Responses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <required>true</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NPS_Score__c</fullName>
+        <description>NPS score from 0 to 10</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Net Promoter Score: 0-10</inlineHelpText>
+        <label>NPS Score</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>CSAT_Score__c</fullName>
+        <description>Customer Satisfaction score from 1 to 5</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CSAT score: 1-5</inlineHelpText>
+        <label>CSAT Score</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Response_Date__c</fullName>
+        <description>When the response was submitted</description>
+        <externalId>false</externalId>
+        <label>Response Date</label>
+        <required>true</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Answers__c</fullName>
+        <description>JSON blob of all answers</description>
+        <externalId>false</externalId>
+        <inlineHelpText>JSON blob containing all question answers</inlineHelpText>
+        <label>Answers</label>
+        <length>32000</length>
+        <required>false</required>
+        <type>LongTextArea</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Current status of the response</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sent, Completed, Bounced, Opened</inlineHelpText>
+        <label>Status</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>true</default>
+                    <label>Sent</label>
+                </value>
+                <value>
+                    <fullName>Opened</fullName>
+                    <default>false</default>
+                    <label>Opened</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Bounced</fullName>
+                    <default>false</default>
+                    <label>Bounced</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <description>Optional link to the triggering case</description>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Survey Responses</relationshipLabel>
+        <relationshipName>Survey_Responses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <label>Survey Response</label>
+    <nameField>
+        <label>Survey Response</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Survey Responses</pluralLabel>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

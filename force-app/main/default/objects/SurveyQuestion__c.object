@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Individual questions within a survey template</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <fields>
+        <fullName>SurveyTemplate__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Template</label>
+        <referenceTo>SurveyTemplate__c</referenceTo>
+        <relationshipLabel>Questions</relationshipLabel>
+        <relationshipName>Questions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <required>true</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Question_Text__c</fullName>
+        <description>The actual question text</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The question to ask the respondent</inlineHelpText>
+        <label>Question Text</label>
+        <length>500</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Question_Type__c</fullName>
+        <description>Type of question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>NPS, CSAT, Text, MultipleChoice, Rating</inlineHelpText>
+        <label>Question Type</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NPS</fullName>
+                    <default>false</default>
+                    <label>NPS</label>
+                </value>
+                <value>
+                    <fullName>CSAT</fullName>
+                    <default>false</default>
+                    <label>CSAT</label>
+                </value>
+                <value>
+                    <fullName>Text</fullName>
+                    <default>false</default>
+                    <label>Text</label>
+                </value>
+                <value>
+                    <fullName>MultipleChoice</fullName>
+                    <default>false</default>
+                    <label>Multiple Choice</label>
+                </value>
+                <value>
+                    <fullName>Rating</fullName>
+                    <default>false</default>
+                    <label>Rating</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <description>Display order of the question</description>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this question required?</description>
+        <externalId>false</externalId>
+        <label>Is Required</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Options__c</fullName>
+        <description>JSON options for MultipleChoice type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>JSON array of options, e.g. [&quot;Option 1&quot;,&quot;Option 2&quot;]</inlineHelpText>
+        <label>Options</label>
+        <length>500</length>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Scale_Min__c</fullName>
+        <description>Minimum value for Rating type</description>
+        <externalId>false</externalId>
+        <label>Scale Min</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Scale_Max__c</fullName>
+        <description>Maximum value for Rating type</description>
+        <externalId>false</externalId>
+        <label>Scale Max</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <label>Survey Question</label>
+    <nameField>
+        <label>Survey Question</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Survey Questions</pluralLabel>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
