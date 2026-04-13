@@ -1,62 +1,78 @@
 # SurveyPack Pro
 
-**One-click survey templates for every Salesforce industry.**
+**One-click survey templates for Salesforce — NPS/CSAT feedback, auto-triggered on Case close.**
 
-Pre-built NPS/CSAT/feedback survey templates organized by industry. Install once, activate per-need, surveys auto-fire on Salesforce events.
+Built by DoInit Technologies | Part of $100 → $100K in 30 Days Sprint
 
-## 🎯 The Problem
+---
 
-Salesforce admins spend hours building survey infrastructure from scratch for each client/industry. SurveyPack Pro gives them industry-optimized templates that install in minutes.
-
-## 🔑 Core Features
-
-- One-click survey templates per industry
-- Auto-trigger via Salesforce Flow (Case Close, Contract Signed, Appointment Complete)
-- Responses stored as native Salesforce Objects — zero compliance burden
-- Pre-built Reports & Dashboards per template
-
-## 🗂️ Industries (Phase 1)
-
-| # | Industry |
-|---|----------|
-| 1 | HVAC |
-| 2 | Legal Services |
-| 3 | Healthcare |
-| 4 | Real Estate |
-| 5 | Dental |
-| 6 | Auto Services |
-| 7 | Logistics |
-| 8 | Retail |
-
-## 📦 What's Inside
+## 🗂️ What's Inside
 
 ```
 surveypack-pro/
-├── force-app/main/default/
-│   ├── classes/          # Apex controllers & handlers
-│   ├── flows/            # Salesforce Flows per industry
-│   ├── objects/          # Custom objects & fields
-│   ├── email/             # Email templates
-│   ├── layouts/           # Page layouts
-│   └── reports/           # Pre-built reports
-├── scripts/               # CI/CD & setup scripts
+├── SKILL.md                        # MiniMax Agent skill (published to marketplace)
+├── skills/
+│   └── salesforce-surveypack/      # MiniMax skill package
+│       ├── references/
+│       │   ├── industry-mapping.md
+│       │   └── scoring.md
+│       └── scripts/
+│           └── create-sample-data.apex
+├── force-app/                      # SFDX source
+│   └── main/default/
+│       ├── classes/
+│       ├── triggers/
+│       └── triggers/
+├── mdapi/                          # Deployment metadata
 ├── docs/
-│   ├── ARCHITECTURE.md    # System design
-│   └── PROJECT_PLAN.md    # Sprint plan
+│   ├── ARCHITECTURE.md
+│   └── PROJECT_PLAN.md
 └── README.md
 ```
 
 ## 🚀 Quick Start
 
-1. Auth with dev org: `sfdx auth:web:login -d -a dev-org`
-2. Deploy: `sfdx force:mdapi:deploy -d mdapi/ -u <username> -w 10`
-3. Activate a template in Setup → Survey Templates
+```bash
+# Deploy to Salesforce org
+sfdx force:mdapi:deploy -d mdapi/ -u <username> -w 10
 
-## 💰 Revenue Model
+# Create sample templates
+sfdx force:apex:execute -f scripts/create-sample-data.apex -u <username>
 
-- Phase 1: Free (build audience)
-- Phase 2: $9–29/month per template pack
+# Close a Case — surveys auto-trigger!
+```
 
-## 🏗️ Built by Alex (CEO Agent) + Agent Team
+## 🤖 MiniMax Agent Skill
 
-Part of **$100 → $100K in 30 Days** sprint. Started: April 10, 2026.
+**Published to:** `agent.minimax.io/skills` (MiniMax Agent Remix Marketplace)
+
+**Skill name:** `salesforce-surveypack`
+
+**What it does:** Creates NPS/CSAT survey workflows in Salesforce — templates per industry, auto-distribution on Case close, response tracking, reports.
+
+**Triggers:** `survey`, `NPS`, `CSAT`, `feedback`, `customer satisfaction`, `Net Promoter Score`, `survey template`, `survey response`, `survey analytics`
+
+**Earn:** 100 Credits per Remix when other users remix this skill
+
+---
+
+## 📊 Revenue Model
+
+- **Phase 1:** Free (build audience and remix count)
+- **Phase 2:** Premium templates + priority support ($9–29/month)
+
+## 🏗️ Built With
+
+- Salesforce Apex + SFDX
+- MiniMax Agent Skills format
+- $150K challenge track: Original + Remix
+
+## 🔗 Links
+
+- **MiniMax Agent:** https://agent.minimax.io
+- **GitHub Repo:** https://github.com/DoInit-Technologies/surveypack-pro
+- **Dev Org:** https://orgfarm-f0ed39956a-dev-ed.develop.my.salesforce.com
+
+---
+
+*Built by Alex (CEO Agent) + Agent Team | April 2026*
